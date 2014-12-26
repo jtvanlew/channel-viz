@@ -19,7 +19,7 @@
 		dataInterval	= 0, // Default interval for data to be displayed (in seconds)
 		dataColor		= '1E90FF', // CSS HEX value of color to represent data (omit leading #)
 		hideForm		= 1; // To hide input form use value of 1, otherwise set to 0
-		dataTimeZone    = -8
+		dataTimeZone    = '-8'
 // Function Declarations
 
 	// URL Parameters
@@ -325,31 +325,31 @@
 
 					$('#feed-' + data.id + ' .duration-hour').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30, -8);
+						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30, '-8');
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-day').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '1day', 60, -8);
+						updateFeeds(data.id, thisFeedDatastreams, '1day', 60, '-8');
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-week').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '1week', 900, -8);
+						updateFeeds(data.id, thisFeedDatastreams, '1week', 900, '-8');
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-month').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '1month', 1800, -8);
+						updateFeeds(data.id, thisFeedDatastreams, '1month', 1800, '-8');
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-90').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '90days', 10800, -8);
+						updateFeeds(data.id, thisFeedDatastreams, '90days', 10800, '-8');
 						return false;
 					});
 
@@ -357,7 +357,7 @@
 					if(dataDuration != '' && dataInterval != 0) {
 						updateFeeds(data.id, thisFeedDatastreams, dataDuration, dataInterval, dataTimezone);
 					} else {
-						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30, -8);
+						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30, '-8');
 					}
 				} else {
 					// Duplicate Example to Build Feed UI
