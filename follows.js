@@ -59,7 +59,7 @@
 
 	// Parse Xively ISO Date Format to Date Object
 	Date.prototype.parseISO = function(iso){
-		var stamp= Date.parse(iso+"-08:00");
+		var stamp= Date.parse(iso);
 		if(!stamp) throw iso +' Unknown date format';
 		return new Date(stamp);
 	}
