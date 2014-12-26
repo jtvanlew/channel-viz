@@ -91,7 +91,7 @@
 					then.setTime(now.getTime() - diff);
 					if(updated.getTime() > then.getTime()) {
 						if(datastreamIds && datastreamIds != '' && datastreamIds.indexOf(datastream.id) >= 0) {
-							xively.datastream.history(feedId, datastream.id, {duration: duration, interval: interval, , timezone: timezone, limit: 1000}, function(datastreamData) {
+							xively.datastream.history(feedId, datastream.id, {duration: duration, interval: interval, timezone: timezone, limit: 1000}, function(datastreamData) {
 
 								var series = [];
 								var points = [];
