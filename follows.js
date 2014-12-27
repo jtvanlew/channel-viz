@@ -130,6 +130,7 @@
 
 									// Add Each Datapoint to Array
 									datastreamData.datapoints.forEach(function(datapoint) {
+										// The datapoint time is coming in at UTC, I have subtracted the 8 hr offset to Pacific (in ms) to correct this on the graph display
 										points.push({x: (new Date(datapoint.at).getTime()-28800000.0)/1000.0, y: parseFloat(datapoint.value)});
 									});
 
