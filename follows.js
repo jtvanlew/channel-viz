@@ -91,7 +91,7 @@
 					then.setTime(now.getTime() - diff);
 					if(updated.getTime() > then.getTime()) {
 						if(datastreamIds && datastreamIds != '' && datastreamIds.indexOf(datastream.id) >= 0) {
-							xively.datastream.history(feedId, datastream.id, {duration: duration, interval: interval, timezone: timezone, limit: 1000}, function(datastreamData) {
+							xively.datastream.history(feedId, datastream.id, {duration: duration, interval: interval, limit: 1000}, function(datastreamData) {
 
 								var series = [];
 								var points = [];
@@ -130,7 +130,7 @@
 
 									// Add Each Datapoint to Array
 									datastreamData.datapoints.forEach(function(datapoint) {
-										points.push({x: new Date(datapoint.at).getTime()/1000.0, y: parseFloat(datapoint.value)});
+										points.push({x: (new Date(datapoint.at).getTime()-28800000.0)/1000.0, y: parseFloat(datapoint.value)});
 									});
 
 									// Add Datapoints Array to Graph Series Array
@@ -325,31 +325,31 @@
 
 					$('#feed-' + data.id + ' .duration-hour').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30, '-8');
+						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-day').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '1day', 60, '-8');
+						updateFeeds(data.id, thisFeedDatastreams, '1day', 60);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-week').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '1week', 900, '-8');
+						updateFeeds(data.id, thisFeedDatastreams, '1week', 900);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-month').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '1month', 1800, '-8');
+						updateFeeds(data.id, thisFeedDatastreams, '1month', 1800);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-90').click(function() {
 						$('#loadingData').foundation('reveal', 'open');
-						updateFeeds(data.id, thisFeedDatastreams, '90days', 10800, '-8');
+						updateFeeds(data.id, thisFeedDatastreams, '90days', 10800);
 						return false;
 					});
 
@@ -357,7 +357,7 @@
 					if(dataDuration != '' && dataInterval != 0) {
 						updateFeeds(data.id, thisFeedDatastreams, dataDuration, dataInterval, dataTimezone);
 					} else {
-						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30, '-8');
+						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30);
 					}
 				} else {
 					// Duplicate Example to Build Feed UI
