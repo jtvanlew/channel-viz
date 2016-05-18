@@ -208,7 +208,7 @@
 					}
 				});
 			}
-			$('#loadingData').foundation('reveal', 'close');
+			// $('#loadingData').foundation('reveal', 'close');
 		});
 	}
 
