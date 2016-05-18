@@ -325,31 +325,31 @@
 					}
 
 					$('#feed-' + data.id + ' .duration-hour').click(function() {
-						$('#loadingData').foundation('reveal', 'open');
+						// $('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '6hours', 30);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-day').click(function() {
-						$('#loadingData').foundation('reveal', 'open');
+						// $('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '1day', 60);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-week').click(function() {
-						$('#loadingData').foundation('reveal', 'open');
+						// $('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '1week', 900);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-month').click(function() {
-						$('#loadingData').foundation('reveal', 'open');
+						// $('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '1month', 1800);
 						return false;
 					});
 
 					$('#feed-' + data.id + ' .duration-90').click(function() {
-						$('#loadingData').foundation('reveal', 'open');
+						// $('#loadingData').foundation('reveal', 'open');
 						updateFeeds(data.id, thisFeedDatastreams, '90days', 10800);
 						return false;
 					});
